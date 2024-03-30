@@ -1,6 +1,15 @@
-import React from 'react'
+
+import React , {useState} from 'react';
 
 export default function MainPage() {
+   //states for the form feilsd
+   const [date, setDate] = useState(null);
+   const [sourceCurrency, setSourceCurrency] = useState("");
+   const [targetCurrency, setTargetCurrency] = useState("");
+   const [amountInSourceCurrency, setAmountInSourceCurrency] = useState(0);
+   const [amountInTargetCurrency, setamountInTargetCurrency] = useState(0);
+  
+   
   return (
     <div>
         <h1 className=' lg:mx-32 text-5xl font-bold text-green-500'>Convert Your Currencies GUYs</h1>
@@ -12,34 +21,40 @@ export default function MainPage() {
                 <form>
                     
                         <div className="mb-6">
-                           <label htmlFor="email" className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Date</label>
-                           <input type="Date" id="" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="name@flowbite.com" required />
+                           <label htmlFor={date} className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Date</label>
+
+                           <input type="Date" id={date} name={date} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="name@flowbite.com" required />
                         </div>
 
                         <div className="mb-6">
-                             <label htmlFor="email" className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Source Currency</label>
-                             <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" name='' id=''>
+                             <label htmlFor={sourceCurrency} className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Source Currency</label>
 
-                                <option value="" >Select the Source Currency</option>
+                             <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" name={sourceCurrency} id={sourceCurrency}>
+
+                                <option value={sourceCurrency} >Select the Source Currency</option>
 
                              </select>
                         </div>
 
                         <div className="mb-6">
-                             <label htmlFor="email" className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Target Currency</label>
-                             <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" name='' id=''>
+                             <label htmlFor={targetCurrency} className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Target Currency</label>
 
-                                <option value="" >Select the target Currency</option>
+                             <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" name={targetCurrency} id={targetCurrency}>
+
+                                <option value={targetCurrency} >Select the target Currency</option>
 
                              </select>
                         </div>
 
                         <div className="mb-6">
-                           <label htmlFor="email" className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Amount in source currency</label>
-                           <input type="text" id="" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Amount in source currency" required />
+                           <label htmlFor={amountInSourceCurrency} className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Amount in source currency</label>
+
+                           <input type="number" id={amountInSourceCurrency} name={amountInSourceCurrency} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Amount in source currency" required />
                         </div>
 
-                        <button className='bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md'>Get the target Currency</button>
+                        <button type='button' className='bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md'>
+                           
+                           Get the target Currency</button>
                     
                 </form>
             </section>

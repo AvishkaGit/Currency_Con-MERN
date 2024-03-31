@@ -7,7 +7,7 @@ export default function MainPage() {
    const [sourceCurrency, setSourceCurrency] = useState("");
    const [targetCurrency, setTargetCurrency] = useState("");
    const [amountInSourceCurrency, setAmountInSourceCurrency] = useState(0);
-   const [amountInTargetCurrency, setamountInTargetCurrency] = useState(0);
+   const [amountInTargetCurrency, setAmountInTargetCurrency] = useState(0);
 
    const handleSubmit = (e) =>{
       e.preventDefault();
@@ -49,7 +49,7 @@ export default function MainPage() {
                         <div className="mb-6">
                              <label htmlFor={targetCurrency} className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Target Currency</label>
 
-                             <select onChange={(e)=>targetCurrency(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" name={targetCurrency} id={targetCurrency}>
+                             <select onChange={(e)=>setTargetCurrency(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" name={targetCurrency} id={targetCurrency}>
 
                                 <option value={targetCurrency} >Select the target Currency</option>
 
@@ -59,7 +59,7 @@ export default function MainPage() {
                         <div className="mb-6">
                            <label htmlFor={amountInSourceCurrency} className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Amount in source currency</label>
 
-                           <input onChange={(e)=>amountInSourceCurrency(e.target.value)} type="number" id={amountInSourceCurrency} name={amountInSourceCurrency} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Amount in source currency" required />
+                           <input onChange={(e)=>setAmountInSourceCurrency(e.target.value)} type="number" id={amountInSourceCurrency} name={amountInSourceCurrency} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500" placeholder="Amount in source currency" required />
                         </div>
 
                         <button className='bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md'>
